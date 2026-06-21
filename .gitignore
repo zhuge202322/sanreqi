@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Next.js output
+.next/
+out/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Local databases and uploads
+prisma/dev.db
+prisma/*.db
+prisma/*.db-journal
+public/uploads/
+
+# Logs
+*.log
+.integrated-dev.*.log
+.next-dev.*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Temporary design exports
+.stitch-*
+
+# Original backend source backup after integration
+houtai/
+
+# Local documents/reference files not needed by the app build
+*.doc
+*.docx
+下单流程.png
+logo-web.png
+
+# Original product/company material folders
+2.165inch*/
+2.952inch*/
+3.347inch*/
+3.937inch*/
+企业网站图片/
