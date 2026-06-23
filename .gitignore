@@ -39,7 +39,8 @@ houtai/
 *.doc
 *.docx
 下单流程.png
-logo-web.png
+/logo-web.png
+!public/logo-web.png
 
 # Original product/company material folders
 2.165inch*/
