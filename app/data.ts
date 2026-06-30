@@ -13,11 +13,13 @@ import {
 } from "lucide-react";
 
 export const company = {
-  name: "Foshan City Huixun Metal CO., LTD.",
+  name: "Foshan City Huixun metal CO., LTD.",
   tradingName: "Foshan Zhonghe Youpin Trading Co., Ltd.",
   email: "hx86.com@gmail.com",
   phone: "+86 159 8999 6985",
   whatsapp: "+86 159 8999 6985",
+  wechat: "357967823",
+  facebook: "https://www.facebook.com/share/18rb9Xsk5C/",
   address:
     "1st Floor, Workshop, No. 3, North of Cunbei Road, Xincun, Shang'an Community, Danzao Town, Nanhai District, Foshan City, China",
   tradingAddress:
@@ -35,6 +37,11 @@ export const products = [
     inchWidth: "2.165 inch",
     image: "/assets/product-55.webp",
     photo: "/assets/product-55-detail.webp",
+    gallery: [
+      { src: "/assets/product-55-real-1.webp", label: "55 mm actual product front view" },
+      { src: "/assets/product-55-real-2.webp", label: "55 mm actual product angle view" },
+      { src: "/assets/product-55-real-3.webp", label: "55 mm actual product side view" },
+    ],
     weight: "1.75 kg/m",
     fins: "11 fins",
     finCount: "11 pcs fins",
@@ -62,6 +69,11 @@ export const products = [
     inchWidth: "2.952 inch",
     image: "/assets/product-75.webp",
     photo: "/assets/product-75-detail.webp",
+    gallery: [
+      { src: "/assets/product-75-real-1.webp", label: "75 mm actual product front view" },
+      { src: "/assets/product-75-real-2.webp", label: "75 mm actual product angle view" },
+      { src: "/assets/product-75-real-3.webp", label: "75 mm actual product side view" },
+    ],
     weight: "2.046 kg/m",
     fins: "13 fins",
     finCount: "13 pcs fins",
@@ -89,6 +101,11 @@ export const products = [
     inchWidth: "3.347 inch",
     image: "/assets/product-85.webp",
     photo: "/assets/product-85-detail.webp",
+    gallery: [
+      { src: "/assets/product-85-real-1.webp", label: "85 mm actual product front view" },
+      { src: "/assets/product-85-real-2.webp", label: "85 mm actual product angle view" },
+      { src: "/assets/product-85-real-3.webp", label: "85 mm actual product side view" },
+    ],
     weight: "2.94 kg/m",
     fins: "11 fins",
     finCount: "11 pcs fins",
@@ -116,6 +133,11 @@ export const products = [
     inchWidth: "3.347 inch",
     image: "/assets/product-g8540.webp",
     photo: "/assets/product-g8540-detail.webp",
+    gallery: [
+      { src: "/assets/product-g8540-real-1.webp", label: "G-8540 actual product angle view" },
+      { src: "/assets/product-g8540-real-2.webp", label: "G-8540 actual product top view" },
+      { src: "/assets/product-g8540-real-3.webp", label: "G-8540 actual product side view" },
+    ],
     weight: "3.25 kg/m",
     fins: "22 fins",
     finCount: "22 pcs fins",
@@ -143,6 +165,11 @@ export const products = [
     inchWidth: "3.937 inch",
     image: "/assets/product-100.webp",
     photo: "/assets/product-100-detail.webp",
+    gallery: [
+      { src: "/assets/product-100-real-1.webp", label: "100 mm actual product fin view" },
+      { src: "/assets/product-100-real-2.webp", label: "100 mm actual product angle view" },
+      { src: "/assets/product-100-real-3.webp", label: "100 mm actual product side view" },
+    ],
     weight: "2.533 kg/m",
     fins: "13 fins",
     finCount: "13 pcs fins",
@@ -193,9 +220,12 @@ export const capabilities = [
 ];
 
 export const factoryProof = [
-  { title: "Profile stock", image: "/assets/factory-stock.webp", body: "Aluminum material prepared for cut-to-length heat sink orders." },
-  { title: "Cutting and preparation", image: "/assets/factory-cutting.webp", body: "Profiles are cut, checked, and prepared for machining or finish." },
-  { title: "Export loading", image: "/assets/factory-loading.webp", body: "Packed goods are protected for loading and international delivery." },
+  { title: "Storage", image: "/assets/factory-storage.webp", body: "Aluminum profiles are stored and prepared for cut-to-length production." },
+  { title: "Cutting", image: "/assets/factory-cutting.webp", body: "Profiles are cut to order before machining and surface treatment." },
+  { title: "Processing", image: "/assets/factory-processing.webp", body: "Workshop equipment supports batch processing for industrial orders." },
+  { title: "CNC machining", image: "/assets/factory-machining.webp", body: "Hole positions, tapping, and custom machining are arranged by drawing." },
+  { title: "Packaging", image: "/assets/factory-packaging.webp", body: "Cartons and protection reduce collision, extrusion, and surface damage." },
+  { title: "Shipping", image: "/assets/factory-shipping.webp", body: "Packed goods are loaded for domestic transfer and export delivery." },
 ];
 
 export const processSteps = [
@@ -264,7 +294,7 @@ export const articleCards = [
 ];
 
 export const homeMetrics = [
-  { label: "Profile widths", value: "55-100 mm", icon: Boxes },
+  { label: "Profile widths", value: "30-252 mm", icon: Boxes },
   { label: "Core material", value: "6063-T5", icon: ShieldCheck },
   { label: "Buyer programs", value: "OEM / ODM", icon: Cpu },
   { label: "Shipment", value: "Export ready", icon: PackageCheck },

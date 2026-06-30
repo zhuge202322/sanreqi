@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, Download, FileText, Mail, ShieldCheck } from "lucide-react";
+import { ProductGallery } from "../../components/ProductGallery";
 import { finishes, processSteps, productFeatureTemplate, products, transportationStorage } from "../../data";
 
 type Props = {
@@ -80,8 +81,17 @@ export default async function ProductDetailPage({ params }: Props) {
               <span className="scan-line" />
               <img src={product.image} alt={`${product.model} dimension drawing main image`} />
             </div>
-            <img className="floating-photo detail-blueprint" src={product.photo} alt={`${product.model} actual product photo`} />
           </div>
+        </div>
+      </section>
+
+      <section className="section light-section product-gallery-section">
+        <div className="container">
+          <ProductGallery
+            drawing={{ src: product.image, label: `${product.model} dimension and parameter drawing` }}
+            photos={[{ src: product.photo, label: `${product.model} actual product hero photo` }, ...product.gallery]}
+            model={product.model}
+          />
         </div>
       </section>
 

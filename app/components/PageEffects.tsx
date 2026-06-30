@@ -47,31 +47,35 @@ export function PageEffects() {
           ),
       });
 
-      gsap.fromTo(
-        ".scan-line",
-        { xPercent: -120 },
-        {
-          xPercent: 170,
-          duration: 1.4,
-          ease: "power2.inOut",
-          stagger: 0.08,
-          scrollTrigger: { trigger: "main", start: "top 85%" },
-        }
-      );
+      if (document.querySelector(".scan-line")) {
+        gsap.fromTo(
+          ".scan-line",
+          { xPercent: -120 },
+          {
+            xPercent: 170,
+            duration: 1.4,
+            ease: "power2.inOut",
+            stagger: 0.08,
+            scrollTrigger: { trigger: "main", start: "top 85%" },
+          }
+        );
+      }
 
-      gsap.fromTo(
-        ".floating-photo",
-        { y: 14, opacity: 0, rotate: -1 },
-        {
-          y: 0,
-          opacity: 1,
-          rotate: 0,
-          duration: 0.75,
-          ease: "power3.out",
-          stagger: 0.06,
-          scrollTrigger: { trigger: "main", start: "top 85%" },
-        }
-      );
+      if (document.querySelector(".floating-photo")) {
+        gsap.fromTo(
+          ".floating-photo",
+          { y: 14, opacity: 0, rotate: -1 },
+          {
+            y: 0,
+            opacity: 1,
+            rotate: 0,
+            duration: 0.75,
+            ease: "power3.out",
+            stagger: 0.06,
+            scrollTrigger: { trigger: "main", start: "top 85%" },
+          }
+        );
+      }
 
       document.querySelectorAll<HTMLElement>(".tilt-card").forEach((card) => {
         const onMove = (event: PointerEvent) => {

@@ -14,7 +14,7 @@ export default function Home() {
             <p className="eyebrow hero-sequence">Foshan export factory for thermal aluminum profiles</p>
             <h1 className="hero-title hero-sequence">Extruded aluminum heat sinks built for export programs.</h1>
             <p className="hero-text hero-sequence">
-              55 mm to 100 mm heat sink extrusion profiles with cutting, hole machining, surface finishing,
+              30 mm to 252 mm heat sink extrusion profiles with cutting, hole machining, surface finishing,
               sample support, and protected carton packing for industrial electronics buyers.
             </p>
             <div className="hero-actions hero-sequence">
@@ -95,8 +95,9 @@ export default function Home() {
       <section className="section light-section">
         <div className="container factory-grid">
           <div className="section-heading reveal">
-            <p className="eyebrow">Visible factory proof</p>
-            <h2>Material storage, cutting, and export loading shown with real factory images.</h2>
+            <p className="eyebrow">Production workflow</p>
+            <h2>Our Comprehensive Production Workflow</h2>
+            <p className="section-note">Storage · Cutting · Processing · Packaging · Shipping</p>
           </div>
           {factoryProof.map((item) => (
             <figure className="factory-tile reveal" key={item.title}>

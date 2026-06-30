@@ -17,7 +17,7 @@ export function SiteHeader() {
       <div className="nav-shell">
         <Link className="brand-lockup" href="/" aria-label="Huixun Metal home" onClick={() => setOpen(false)}>
           <span className="brand-mark">
-            <img src="/logo-web.png" alt="Foshan City Huixun Metal" />
+            <img src="/logo-web.png" alt="Foshan City Huixun metal CO., LTD." />
           </span>
           <span className="brand-copy">
             <strong>Huixun Metal</strong>

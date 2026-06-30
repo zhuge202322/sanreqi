@@ -16,7 +16,7 @@ export default function AboutPage() {
             <p className="eyebrow hero-sequence">About the factory</p>
             <h1 className="page-title hero-sequence">Foshan aluminum heat sink manufacturing for export buyers.</h1>
             <p className="page-intro hero-sequence">
-              Huixun Metal supports extrusion profile selection, cutting, machining, surface treatment, sample
+              {company.name} supports extrusion profile selection, cutting, machining, surface treatment, sample
               confirmation, packing, and shipment for industrial electronics programs.
             </p>
           </div>
@@ -65,8 +65,9 @@ export default function AboutPage() {
       <section className="section light-section">
         <div className="container factory-grid about-gallery">
           <div className="section-heading reveal">
-            <p className="eyebrow">Factory images</p>
-            <h2>Stock, cutting, and shipment scenes from the working floor.</h2>
+            <p className="eyebrow">Production workflow</p>
+            <h2>Our Comprehensive Production Workflow</h2>
+            <p className="section-note">Storage · Cutting · Processing · Packaging · Shipping</p>
           </div>
           {factoryProof.map((item) => (
             <figure className="factory-tile reveal" key={item.title}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { FloatingContact } from "./FloatingContact";
 import { PageEffects } from "./PageEffects";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -21,6 +22,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
       <PageEffects />
       <SiteHeader />
       <main id="main-content">{children}</main>
+      <FloatingContact />
       <SiteFooter />
     </>
   );

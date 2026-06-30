@@ -10,7 +10,7 @@ export function ProductCard({ product }: { product: Product }) {
       <Link className="product-media" href={`/products/${product.slug}`}>
         <span className="product-series">Series {product.model}</span>
         <img className="product-photo" src={product.image} alt={`${product.model} dimension drawing main image`} loading="lazy" />
-        <img className="floating-photo" src={product.photo} alt={`${product.model} actual product photo`} loading="lazy" />
+        <span className="product-photo-chip">Actual photos inside</span>
       </Link>
       <div className="product-card-body">
         <div className="product-meta">

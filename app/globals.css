@@ -661,6 +661,10 @@ main {
   margin-top: 38px;
 }
 
+.product-grid > div {
+  min-width: 0;
+}
+
 .product-grid.three-up {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -898,7 +902,7 @@ main {
 .factory-grid {
   display: grid;
   gap: 18px;
-  grid-template-columns: 1.18fr 0.82fr 0.82fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .factory-grid .section-heading {
@@ -906,16 +910,24 @@ main {
 }
 
 .factory-tile {
+  background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--color-outline);
+  display: grid;
+  grid-template-rows: auto minmax(104px, auto);
   margin: 0;
-  min-height: 430px;
   overflow: hidden;
   position: relative;
 }
 
 .factory-tile img {
-  height: 100%;
-  object-fit: cover;
+  background:
+    linear-gradient(to right, rgba(209, 213, 219, 0.34) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(209, 213, 219, 0.34) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.66);
+  background-size: 24px 24px;
+  height: clamp(260px, 22vw, 320px);
+  object-fit: contain;
+  padding: 12px;
   transition: transform 650ms ease;
   width: 100%;
 }
@@ -925,15 +937,12 @@ main {
 }
 
 .factory-tile figcaption {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid var(--color-outline);
-  bottom: 16px;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid var(--color-outline);
   display: grid;
   gap: 5px;
-  left: 16px;
-  max-width: calc(100% - 32px);
   padding: 14px 16px;
-  position: absolute;
 }
 
 .factory-tile figcaption strong {
@@ -1062,15 +1071,20 @@ main {
 }
 
 .sub-hero-image {
+  align-items: center;
+  background: var(--color-surface);
   border: 1px solid var(--color-outline);
+  display: grid;
   max-height: 390px;
+  min-height: 390px;
   overflow: hidden;
   position: relative;
 }
 
 .sub-hero-image img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 10px;
   width: 100%;
 }
 
@@ -1102,6 +1116,114 @@ main {
 .finish-list span:hover {
   background: var(--color-primary);
   color: #fff;
+}
+
+.category-anchor-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.category-anchor-row span {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--color-outline-soft);
+  color: var(--color-primary);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  min-height: 44px;
+  padding: 13px 14px;
+  text-transform: uppercase;
+}
+
+.product-catalog-layout {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 280px minmax(0, 1fr);
+}
+
+.catalog-sidebar {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--color-outline);
+  box-shadow: var(--shadow-mechanical);
+  display: grid;
+  gap: 22px;
+  padding: 18px;
+  position: sticky;
+  top: 96px;
+}
+
+.catalog-sidebar-head {
+  background: var(--color-primary);
+  color: #fff;
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+}
+
+.catalog-sidebar-head svg {
+  color: var(--color-accent);
+}
+
+.catalog-sidebar-head strong {
+  font-size: 1.1rem;
+  line-height: 1.1;
+}
+
+.catalog-sidebar-head span {
+  color: rgba(255, 255, 255, 0.68);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.catalog-group {
+  display: grid;
+  gap: 8px;
+}
+
+.catalog-group + .catalog-group {
+  border-top: 1px solid var(--color-outline-soft);
+  padding-top: 18px;
+}
+
+.catalog-group h2 {
+  color: var(--color-outline-dark);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+
+.catalog-group a {
+  align-items: center;
+  color: var(--color-primary);
+  display: flex;
+  font-size: 0.92rem;
+  font-weight: 700;
+  justify-content: space-between;
+  line-height: 1.35;
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.catalog-group a::after {
+  color: var(--color-accent);
+  content: ">";
+  font-family: var(--mono);
+  font-size: 0.76rem;
+}
+
+.catalog-group a:hover {
+  background: var(--color-surface-low);
+}
+
+.catalog-main {
+  min-width: 0;
 }
 
 .spec-matrix {
@@ -1183,6 +1305,178 @@ main {
 .detail-blueprint {
   height: 94px;
   width: 150px;
+}
+
+.product-gallery-section {
+  padding-top: 72px;
+}
+
+.product-gallery {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+}
+
+.gallery-heading {
+  grid-column: 1 / -1;
+  max-width: 760px;
+}
+
+.gallery-heading h2 {
+  color: var(--color-primary);
+  font-size: clamp(1.85rem, 3vw, 2.65rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0 0 12px;
+}
+
+.gallery-heading span {
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.gallery-drawing,
+.actual-photo-grid button {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--color-outline);
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-align: left;
+}
+
+.gallery-drawing {
+  min-height: 520px;
+}
+
+.gallery-drawing img,
+.actual-photo-grid img {
+  background:
+    linear-gradient(to right, rgba(209, 213, 219, 0.48) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(209, 213, 219, 0.48) 1px, transparent 1px),
+    var(--color-surface);
+  background-size: 24px 24px;
+  height: 100%;
+  object-fit: contain;
+  padding: 24px;
+  transition: transform 260ms ease;
+  width: 100%;
+}
+
+.gallery-drawing:hover img,
+.actual-photo-grid button:hover img {
+  transform: scale(1.025);
+}
+
+.gallery-drawing strong,
+.actual-photo-grid span {
+  align-items: center;
+  backdrop-filter: blur(16px);
+  background: rgba(23, 25, 30, 0.88);
+  bottom: 12px;
+  color: #fff;
+  display: inline-flex;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  gap: 8px;
+  left: 12px;
+  min-height: 40px;
+  padding: 0 12px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.actual-photo-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.actual-photo-grid button {
+  min-height: 250px;
+}
+
+.image-lightbox {
+  align-items: center;
+  display: grid;
+  inset: 0;
+  justify-items: center;
+  padding: 28px;
+  position: fixed;
+  z-index: 120;
+}
+
+.lightbox-backdrop {
+  background: rgba(10, 12, 16, 0.74);
+  border: 0;
+  cursor: pointer;
+  inset: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.lightbox-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-outline);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  display: grid;
+  max-height: min(86vh, 920px);
+  max-width: min(92vw, 1100px);
+  padding: 16px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.lightbox-panel img {
+  background: var(--color-surface-low);
+  max-height: calc(86vh - 92px);
+  object-fit: contain;
+  width: 100%;
+}
+
+.lightbox-panel p {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 12px 0 0;
+}
+
+.lightbox-close {
+  align-items: center;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 44px;
+  justify-content: center;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 44px;
+  z-index: 2;
+}
+
+.product-photo-chip {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--color-outline);
+  bottom: 14px;
+  color: var(--color-primary);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  left: 14px;
+  min-height: 34px;
+  padding: 9px 11px;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
 .spec-block {
@@ -1671,6 +1965,12 @@ main {
   width: 150px;
 }
 
+.footer-brand {
+  align-content: start;
+  display: grid;
+  justify-items: start;
+}
+
 .footer-brand p,
 .footer-contact span {
   color: rgba(255, 255, 255, 0.66);
@@ -1710,6 +2010,90 @@ main {
   color: #fff;
 }
 
+.footer-social-button {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  color: rgba(255, 255, 255, 0.82);
+  display: inline-flex;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  gap: 10px;
+  margin-top: 6px;
+  min-height: 42px;
+  padding: 0 14px;
+  text-transform: uppercase;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.footer-social-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.floating-contact {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-outline);
+  box-shadow: 0 18px 48px rgba(17, 19, 23, 0.16);
+  display: grid;
+  gap: 6px;
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 154px;
+  z-index: 60;
+}
+
+.floating-contact-label {
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 9px 12px;
+  text-transform: uppercase;
+}
+
+.floating-contact a,
+.floating-contact-note {
+  align-items: center;
+  color: var(--color-primary);
+  display: grid;
+  gap: 2px 10px;
+  grid-template-columns: 22px 1fr;
+  min-height: 48px;
+  padding: 8px 12px;
+}
+
+.floating-contact a:hover {
+  background: var(--color-surface-low);
+}
+
+.floating-contact svg {
+  color: var(--color-accent);
+  grid-row: span 2;
+}
+
+.floating-contact span {
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.floating-contact-note strong {
+  color: var(--color-muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
 .reveal {
   opacity: 1;
 }
@@ -1724,10 +2108,16 @@ main {
   .detail-grid,
   .detail-layout,
   .performance-layout,
+  .product-catalog-layout,
+  .product-gallery,
   .about-grid,
   .inquiry-grid,
   .article-feature {
     grid-template-columns: 1fr;
+  }
+
+  .catalog-sidebar {
+    position: static;
   }
 
   .product-grid,
@@ -1816,9 +2206,11 @@ main {
 
   .metric-grid,
   .product-grid,
+  .category-anchor-row,
   .article-grid,
   .factory-grid,
   .about-gallery,
+  .actual-photo-grid,
   .capability-grid,
   .process-grid,
   .matrix-grid,
@@ -1838,6 +2230,50 @@ main {
 
   .factory-tile {
     min-height: 320px;
+  }
+
+  .gallery-drawing {
+    min-height: 360px;
+  }
+
+  .floating-contact {
+    bottom: 12px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    left: 12px;
+    right: 12px;
+    top: auto;
+    transform: none;
+    width: auto;
+  }
+
+  .floating-contact-label {
+    display: none;
+  }
+
+  .floating-contact a,
+  .floating-contact-note {
+    gap: 4px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    min-height: 58px;
+    padding: 8px 6px;
+    text-align: center;
+  }
+
+  .floating-contact svg {
+    grid-row: auto;
+  }
+
+  .floating-contact span {
+    font-size: 0.72rem;
+  }
+
+  .floating-contact-note strong {
+    display: none;
+  }
+
+  .site-footer {
+    padding-bottom: 96px;
   }
 
   .spec-table div {
